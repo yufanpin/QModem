@@ -101,6 +101,7 @@ msgstr ""
 #: vendor/simcom.sh:257
 #: vendor/telit.sh:156
 #: vendor/thales.sh:45
+#: vendor/tw.sh:251
 #: view/qmodem/settings.js:356
 msgid "AT Port"
 msgstr ""
@@ -337,6 +338,7 @@ msgstr ""
 #: vendor/thales.sh:393
 #: vendor/thales.sh:420
 #: vendor/thales.sh:451
+#: vendor/tw.sh:418
 #: view/qmodem/config_advanced.js:756
 msgid "Band"
 msgstr ""
@@ -367,6 +369,7 @@ msgstr ""
 #: vendor/simcom.sh:253
 #: vendor/telit.sh:152
 #: vendor/thales.sh:41
+#: vendor/tw.sh:247
 msgid "Base Information"
 msgstr ""
 
@@ -416,6 +419,7 @@ msgstr ""
 
 #: vendor/gosuncn.sh:647
 #: vendor/openluat.sh:1000
+#: vendor/tw.sh:421
 msgid "Carrier"
 msgstr ""
 
@@ -476,6 +480,7 @@ msgstr ""
 #: vendor/simcom.sh:1140
 #: vendor/telit.sh:737
 #: vendor/thales.sh:374
+#: vendor/tw.sh:438
 #: view/qmodem/config_advanced.js:949
 #: view/qmodem/config_advanced.js:974
 msgid "Cell Information"
@@ -1559,6 +1564,7 @@ msgstr ""
 #: vendor/telit.sh:209
 #: vendor/telit.sh:223
 #: vendor/thales.sh:353
+#: vendor/tw.sh:305
 msgid "Integrate Circuit Card Identity"
 msgstr ""
 
@@ -1587,6 +1593,7 @@ msgstr ""
 #: vendor/telit.sh:207
 #: vendor/telit.sh:213
 #: vendor/telit.sh:221
+#: vendor/tw.sh:294
 msgid "International Mobile Equipment Identity"
 msgstr ""
 
@@ -1607,6 +1614,7 @@ msgstr ""
 #: vendor/simcom.sh:325
 #: vendor/telit.sh:208
 #: vendor/telit.sh:222
+#: vendor/tw.sh:304
 msgid "International Mobile Subscriber Identity"
 msgstr ""
 
@@ -1812,6 +1820,7 @@ msgstr ""
 #: vendor/simcom.sh:255
 #: vendor/telit.sh:154
 #: vendor/thales.sh:42
+#: vendor/tw.sh:249
 #: view/qmodem/settings.js:382
 msgid "Manufacturer"
 msgstr ""
@@ -2050,6 +2059,7 @@ msgstr ""
 #: vendor/sierra.sh:208
 #: vendor/simcom.sh:254
 #: vendor/telit.sh:153
+#: vendor/tw.sh:248
 msgid "Name"
 msgstr ""
 
@@ -2076,6 +2086,7 @@ msgstr ""
 #: vendor/simcom.sh:343
 #: vendor/telit.sh:242
 #: vendor/thales.sh:362
+#: vendor/tw.sh:412
 msgid "Network Information"
 msgstr ""
 
@@ -2119,6 +2130,11 @@ msgstr ""
 msgid "Network Preference Configuration"
 msgstr ""
 
+#: vendor/tw.sh:413
+#: vendor/tw.sh:491
+msgid "Network State"
+msgstr ""
+
 #: vendor/fibocom.sh:953
 #: vendor/foxconn.sh:325
 #: vendor/gosuncn.sh:646
@@ -2129,6 +2145,7 @@ msgstr ""
 #: vendor/simcom.sh:344
 #: vendor/telit.sh:243
 #: vendor/thales.sh:367
+#: vendor/tw.sh:414
 msgid "Network Type"
 msgstr ""
 
@@ -2729,6 +2746,7 @@ msgstr ""
 #: vendor/simcom.sh:256
 #: vendor/telit.sh:155
 #: vendor/thales.sh:44
+#: vendor/tw.sh:250
 msgid "Revision"
 msgstr ""
 
@@ -2796,6 +2814,7 @@ msgstr ""
 #: vendor/simcom.sh:303
 #: vendor/telit.sh:201
 #: vendor/thales.sh:317
+#: vendor/tw.sh:292
 msgid "SIM Information"
 msgstr ""
 
@@ -2870,6 +2889,7 @@ msgstr ""
 #: vendor/telit.sh:216
 #: vendor/telit.sh:219
 #: vendor/thales.sh:332
+#: vendor/tw.sh:293
 msgid "SIM Status"
 msgstr ""
 
@@ -3074,6 +3094,10 @@ msgstr ""
 
 #: view/qmodem/sms_forward.js:192
 msgid "ServerChan API token from https://sctapi.ftqq.com"
+msgstr ""
+
+#: vendor/tw.sh:490
+msgid "Serving Cell (raw)"
 msgstr ""
 
 #: vendor/fibocom.sh:1753
@@ -3305,6 +3329,7 @@ msgstr ""
 #: vendor/simcom.sh:235
 #: vendor/telit.sh:139
 #: vendor/thales.sh:484
+#: vendor/tw.sh:254
 msgid "Temperature"
 msgstr ""
 
@@ -3518,6 +3543,7 @@ msgstr ""
 #: vendor/sierra.sh:327
 #: vendor/simcom.sh:219
 #: vendor/telit.sh:127
+#: vendor/tw.sh:257
 msgid "Voltage"
 msgstr ""
 
