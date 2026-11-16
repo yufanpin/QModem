@@ -44,9 +44,12 @@ printf '2004\n' > "$SLOT/idProduct"
 printf '2dee\n' > "$OTHER/idVendor"
 printf '4d23\n' > "$OTHER/idProduct"
 
+# sysfs keeps the interface entries *next to* the device entry, not below it:
+# /sys/bus/usb/devices/2-1 and /sys/bus/usb/devices/2-1:1.4 are siblings.
+DEVS="$SYS/bus/usb/devices"
 # TW500M-CN layout: 1.0 DIAG, 1.1/1.2 AT, 1.3 NMEA, 1.4 RmNet.
 for i in 0 1 2 3 4; do
-    mkdir -p "$SLOT/2-1:1.$i"
+    mkdir -p "$DEVS/2-1:1.$i"
 done
 
 write_full_rule()
@@ -136,7 +139,7 @@ expect_file "$QMI/bind" ""
 mkdir -p "$SYS/fake/option" "$SYS/fake/qmi_wwan"
 symlink_ok=1
 for i in 0 1 2 3 4; do
-    ln -sfn "$SYS/fake/option" "$SLOT/2-1:1.$i/driver" 2>/dev/null || symlink_ok=0
+    ln -sfn "$SYS/fake/option" "$DEVS/2-1:1.$i/driver" 2>/dev/null || symlink_ok=0
 done
 if [ "$symlink_ok" -eq 1 ]; then
     reset_sysfs
@@ -148,7 +151,7 @@ else
     echo "SKIP: symlinks unavailable, cannot simulate an option-owned RmNet interface"
 fi
 for i in 0 1 2 3 4; do
-    rm -f "$SLOT/2-1:1.$i/driver"
+    rm -f "$DEVS/2-1:1.$i/driver"
 done
 
 # 5) Scanning every slot picks up the rule as well.

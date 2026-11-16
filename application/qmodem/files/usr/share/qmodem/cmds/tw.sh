@@ -1,9 +1,10 @@
 #!/bin/sh
 # T&W (Xi'an Gongjin) SDX55 module AT command wrappers.
 #
-# TW500M-CN deliberately trims the 3GPP command set: AT+CSQ, AT+COPS?,
-# AT+CREG?, AT+CLAC and the Quectel AT+Q* family all answer ERROR, while
-# network state is only available through the vendor private commands below.
+# TW500M-CN drops the Quectel extensions and keeps the 3GPP basics: AT+QENG
+# and AT+CLAC do not exist, so signal and cell data only come from the vendor
+# private commands below. AT+CSQ, AT+COPS?, AT+CREG?, AT+ICCID and AT+CIMI do
+# answer once the SIM is registered.
 # Never send raw AT from the vendor layer; add a wrapper here instead so
 # fixtures can be collected and replayed.
 #
