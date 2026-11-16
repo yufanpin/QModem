@@ -15,6 +15,7 @@ return baseclass.extend({
 		telit: 'Telit',
 		thales: 'Thales',
 		openluat: 'OpenLuat',
+		tw: 'T&W',
 		nk: "Tom's Love"
 	},
 	platforms: {

@@ -136,3 +136,8 @@ Model | Platform | USB  | PCIe
 --- | --- | --- | ---
 me3630-w | lte |✔ usb(ecm) | ✘
 gm800 | qualcomm |✔ usb(qmi,ecm,mbim,rndis) | ✔ pcie(mbim)
+
+# tw
+Model | Platform | USB  | PCIe 
+--- | --- | --- | ---
+tw500m-cn | qualcomm |✔ usb(qmi) | ✘

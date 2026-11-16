@@ -28,6 +28,11 @@ scanc()
 case "$action" in
     add)
         [ -n "$config" ] && [ -n "$slot_type" ] || exit 1
+        # Modules whose USB IDs are missing from the in-kernel driver tables
+        # need their interfaces routed before the scan can see them.
+        if [ "$slot_type" = "usb" ] && [ -x /usr/share/qmodem/modem_usb_bind.sh ]; then
+            /usr/share/qmodem/modem_usb_bind.sh "$config" >/dev/null 2>&1
+        fi
         scanc add "$config" "$slot_type" "${delay:-0}"
         exit $?
         ;;
@@ -42,6 +47,12 @@ case "$action" in
         exit $?
         ;;
     scan)
+        # Route interfaces of modules with IDs missing from the kernel tables
+        # before enumerating; without this the scan sees no ttyUSB or wwan
+        # device on the first pass after boot.
+        if [ -x /usr/share/qmodem/modem_usb_bind.sh ]; then
+            /usr/share/qmodem/modem_usb_bind.sh all >/dev/null 2>&1
+        fi
         # Old format: modem_scan.sh scan [delay] [usb|pcie]
         # Also accept: modem_scan.sh scan [usb|pcie|all]
         case "$config" in

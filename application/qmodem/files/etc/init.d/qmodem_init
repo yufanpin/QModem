@@ -98,6 +98,11 @@ _queue_boot_scan()
         # procd launches instances after start_service returns. Do not block it
         # or restart the service from here while waiting for the socket.
         local attempts=0
+        # Route interfaces of modules whose USB IDs are missing from the
+        # kernel driver tables before the first enumeration.
+        if [ -x /usr/share/qmodem/modem_usb_bind.sh ]; then
+            /usr/share/qmodem/modem_usb_bind.sh all >/dev/null 2>&1
+        fi
         while [ "$attempts" -lt 30 ]; do
             if /usr/bin/modem_scanc status >/dev/null 2>&1 &&
                /usr/bin/modem_scanc scan "$scan_type" "$scan_delay" >/dev/null 2>&1; then

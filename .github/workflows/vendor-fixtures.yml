@@ -34,6 +34,9 @@ jobs:
                -type f -name '*.sh' -exec sh -n {} +
           sh -n application/qmodem/files/usr/share/qmodem/generic.sh
           sh -n application/qmodem/files/usr/share/qmodem/modem_util.sh
+          sh -n application/qmodem/files/usr/share/qmodem/modem_usb_bind.sh
+          sh -n application/qmodem/files/usr/share/qmodem/modem_scan.sh
+          sh -n application/qmodem/tests/test_usb_bind.sh
           sh -n application/qmodem/files/usr/sbin/qmodem_collect
           sh -n application/qmodem/tests/test_core_cmds.sh
           sh -n application/qmodem/tests/test_sms_forwarder_conflicts.sh
@@ -49,6 +52,7 @@ jobs:
         run: |
           application/qmodem/tests/test_vendor_cmds_boundary.sh
           application/qmodem/tests/test_core_cmds.sh
+          application/qmodem/tests/test_usb_bind.sh
           sh application/qmodem/tests/test_boot_scan.sh
           sh application/qmodem/tests/test_fibocom_preferences.sh
           node luci/luci-app-qmodem-next/tests/test_network_prefer_result.js

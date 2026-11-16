@@ -12,5 +12,6 @@
     "thales" : "thales.sh",
     "nk" : "nk.sh",
     "gosuncn" : "gosuncn.sh",
-    "openluat" : "openluat.sh"
+    "openluat" : "openluat.sh",
+    "tw" : "tw.sh"
 }
