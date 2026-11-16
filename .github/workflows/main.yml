@@ -215,7 +215,21 @@ jobs:
           sudo -E apt-get -qq autoremove --purge
           sudo -E apt-get -qq clean
 
-      
+      # The 23.05/24.10 SDKs test for GNU coreutils with
+      # `install --version | grep GNU` during their prerequisite check.
+      # Runner images from Ubuntu 25.10 on ship Rust coreutils (uutils), whose
+      # version string has no "GNU", so every ipk target aborts with
+      # "Please install GNU 'install'" while the apk targets (snapshot SDK,
+      # relaxed check) still pass. Restore the GNU build only when needed.
+      - name: Restore GNU coreutils
+        run: |
+          if ! install --version 2>/dev/null | grep -q 'GNU coreutils'; then
+            echo "non-GNU coreutils detected, restoring GNU build"
+            sudo -E apt-get -qq install -y --allow-remove-essential coreutils-from-gnu coreutils-from-uutils-
+            hash -r
+          fi
+          install --version | head -n1
+
       - name: Checkout
         uses: actions/checkout@v4
         with:
